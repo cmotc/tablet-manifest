@@ -101,7 +101,7 @@ upload:
 clean:
 	cd u-boot && make clean; \
 	cd ../imgmaker && make clean; \
-	cd ../nonfree-touchscreen-firmware-common && make clean; \
+	cd ../nonfree-touchscreen-firmware-common && make debclean; \
 	cd ../ath6kl-firmware && make clean; \
 	cd ../ath9k-firmware && make clean; \
 	cd .. && rm *.buildinfo *.changes *.deb *.deb.md *.dsc *.tar.xz *.tar.gz *.debian.tar.xz *.debian.tar.gz *.orig.tar.gz *.orig.tar.zz; \
