@@ -34,7 +34,7 @@ init:
 	make checkout
 
 init-upstream:
-	\git remote add upstream git@github.com:cmotc/tablet-manifest
+	\git remote add upstream git@github.com:cmotc/tablet-manifest; \
 	cd u-boot && \git remote add upstream git@github.com:cmotc/u-boot
 	cd imgmaker && \git  remote add upstream git@github.com:cmotc/imgmaker
 	cd nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:cmotc/nonfree-touchscreen-firmware-common
