@@ -24,7 +24,7 @@ deinit:
 
 init:
 	make init-upstream; \
-	\git remote add github git@github.com:$(GH_NAME)/tablet-manifest
+	\git remote add github git@github.com:$(GH_NAME)/tablet-manifest \
 	cd u-boot && \git remote add github git@github.com:$(GH_NAME)/u-boot
 	cd imgmaker && \git  remote add github git@github.com:$(GH_NAME)/imgmaker
 	cd nonfree-touchscreen-firmware-common && \git  remote add github git@github.com:$(GH_NAME)/nonfree-touchscreen-firmware-common
