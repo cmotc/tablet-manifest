@@ -13,7 +13,7 @@ clone:
 	\git clone git@github.com:$(GH_NAME)/u-boot || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/u-boot; \
 	\git clone git@github.com:$(GH_NAME)/imgmaker || \git clone https://github.com/$(GH_NAME)/imgmaker || git clone https://github.com/cmotc/imgmaker; \
 	\git clone git@github.com:$(GH_NAME)/ath6kl-firmware || \git clone https://github.com/$(GH_NAME)/imgmaker || git clone https://github.com/cmotc/ath6kl-firmware; \
-	\git clone git@github.com:$(GH_NAME)/ath9k-firmware || \git clone https://github.com/$(GH_NAME)/ath9k-firmware || git clone https://github.com/cmotc/ath9k-firmware; \
+	\git clone git@github.com:$(GH_NAME)/open-ath9k-htc-firmware || \git clone https://github.com/$(GH_NAME)/open-ath9k-htc-firmware || git clone https://github.com/cmotc/open-ath9k-htc-firmware; \
 	echo "Cloned subprojects"
 
 deinit:
@@ -27,22 +27,22 @@ deinit:
 
 init:
 	make init-upstream; \
-	\git remote add github git@github.com:$(GH_NAME)/tablet-manifest \
-	cd u-boot && \git remote add github git@github.com:$(GH_NAME)/u-boot
-	cd imgmaker && \git  remote add github git@github.com:$(GH_NAME)/imgmaker
-	cd nonfree-touchscreen-firmware-common && \git  remote add github git@github.com:$(GH_NAME)/nonfree-touchscreen-firmware-common
-	cd ath6kl-firmware && \git  remote add github git@github.com:$(GH_NAME)/ath6kl-firmware
-	cd ath9k-firmware && \git  remote add github git@github.com:$(GH_NAME)/ath9k-firmware
+	\git remote add github git@github.com:$(GH_NAME)/tablet-manifest; \
+	cd u-boot && \git remote add github git@github.com:$(GH_NAME)/u-boot; \
+	cd ../imgmaker && \git  remote add github git@github.com:$(GH_NAME)/imgmaker; \
+	cd ../nonfree-touchscreen-firmware-common && \git  remote add github git@github.com:$(GH_NAME)/nonfree-touchscreen-firmware-common; \
+	cd ../ath6kl-firmware && \git  remote add github git@github.com:$(GH_NAME)/ath6kl-firmware; \
+	cd ../ath9k-firmware && \git  remote add github git@github.com:$(GH_NAME)/open-ath9k-htc-firmware; \
 	echo "Initialized Working Remotes"
 	make checkout
 
 init-upstream:
 	\git remote add upstream git@github.com:cmotc/tablet-manifest; \
-	cd u-boot && \git remote add upstream git@github.com:cmotc/u-boot
-	cd imgmaker && \git  remote add upstream git@github.com:cmotc/imgmaker
-	cd nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:cmotc/nonfree-touchscreen-firmware-common
-	cd ath6kl-firmware && \git  remote add upstream git@github.com:cmotc/ath6kl-firmware
-	cd ath9k-firmware && \git  remote add upstream git@github.com:cmotc/ath9k-firmware
+	cd u-boot && \git remote add upstream git@github.com:cmotc/u-boot; \
+	cd ../imgmaker && \git  remote add upstream git@github.com:cmotc/imgmaker; \
+	cd ../nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:cmotc/nonfree-touchscreen-firmware-common; \
+	cd ../ath6kl-firmware && \git  remote add upstream git@github.com:cmotc/ath6kl-firmware;
+	cd ../ath9k-firmware && \git  remote add upstream git@github.com:cmotc/open-ath9k-htc-firmware; \
 	echo "Initialized Upstream Remotes"
 
 checkout:
