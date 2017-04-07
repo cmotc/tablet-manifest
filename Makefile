@@ -168,6 +168,10 @@ deb:
 
 full:
 	gpg --batch --yes --clear-sign -u $(KEY) README.md
+	make uboot
+	make imgmaker
+	make nonfree-touchscreen-firmware-common
+	make ath6kl
 	echo "Rebuilt the whole suite"
 
 push:
