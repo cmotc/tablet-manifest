@@ -137,7 +137,7 @@ update-ath9k:
 		\git push github master
 
 touchscreen:
-	export VERSION=$(VERSION);cd nonfree-touchscreen-firmware-common && make deb-pkg || make deb-upkg
+	export VERSION=$(VERSION);cd nonfree-touchscreen-firmware-common && make debclean; make deb-pkg || make deb-upkg
 
 update-touchscreen:
 	export VERSION=$(VERSION);cd nonfree-touchscreen-firmware-common &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
