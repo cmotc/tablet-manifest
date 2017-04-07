@@ -2,13 +2,11 @@
 <manifest>
   <remote name="origin"
           fetch="git://github.com/cmotc/" />
-
   <default remote="origin"
            pushurl="git@github.com:cmotc/"
            revision="master" />
   <project path="." name="lair-manifest" />
-  <project path="u-boot-upstream" name="u-boot-upstream" />
-  <project path="u-boot-cmotc" name="u-boot-cmotc" />
+  <project path="u-boot" name="u-boot" />
   <project path="linux-debian-49" name="linux-debian-49" />
   <project path="linux-grsec-49" name="linux-grsec-49" />
   <project path="linux-libre-49" name="linux-libre-49"/>
