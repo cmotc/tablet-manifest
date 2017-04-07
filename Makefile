@@ -41,7 +41,7 @@ init-upstream:
 	cd u-boot && \git remote add upstream git@github.com:cmotc/u-boot; \
 	cd ../imgmaker && \git  remote add upstream git@github.com:cmotc/imgmaker; \
 	cd ../nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:cmotc/nonfree-touchscreen-firmware-common; \
-	cd ../ath6kl-firmware && \git  remote add upstream git@github.com:cmotc/ath6kl-firmware;
+	cd ../ath6kl-firmware && \git  remote add upstream git@github.com:cmotc/ath6kl-firmware; \
 	cd ../ath9k-firmware && \git  remote add upstream git@github.com:cmotc/open-ath9k-htc-firmware; \
 	echo "Initialized Upstream Remotes"
 
