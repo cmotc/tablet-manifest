@@ -20,6 +20,9 @@ deinit:
 	 \git remote remove github
 	cd u-boot && \git remote remove github
 	cd imgmaker && \git remote remove github
+	cd nonfree-touchscreen-firmware-common && \git  remote remove github
+	cd ath6kl-firmware && \git  remote remove github
+	cd ath9k-firmware && \git  remote remove github
 	echo "removed pre-init"
 
 init:
