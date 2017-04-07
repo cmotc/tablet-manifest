@@ -2,11 +2,15 @@
 <manifest>
   <remote name="origin"
           fetch="git://github.com/cmotc/" />
+  <remote name="uboot"
+          fetch="https://github.com/u-boot/" />
   <default remote="origin"
            pushurl="git@github.com:cmotc/"
            revision="master" />
+
   <project path="." name="tablet-manifest" />
   <project path="u-boot" name="u-boot" />
+  <!--<project path="u-boot" name="u-boot" remote="uboot"/>-->
   <!--
   <project path="linux-debian" name="linux-debian" />
   <project path="linux-grsec" name="linux-grsec" />
