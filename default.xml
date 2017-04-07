@@ -13,7 +13,7 @@
   <project path="linux-libre" name="linux-libre"/>
   <project path="linux-libre-grsec" name="linux-libre-grsec" />
   -->
-  <project path="imgmaker" name="imgmaker" />
+  <project path="imgmaker" name="imgmaker" revision="new-master" />
   <project path="nonfree-touchscreen-firmware-common" name="nonfree-touchscreen-firmware-common" />
   <project path="ath6kl-firmware" name="ath6kl-firmware" />
   <!--
