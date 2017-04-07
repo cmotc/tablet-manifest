@@ -66,6 +66,7 @@ commit:
 
 fetch:
 	git fetch upstream &&\git rebase upstream/master; \
+	git fetch github &&\git rebase github/master; \
 	cd u-boot && git fetch upstream && \git rebase upstream/master; \
 	cd ../imgmaker && git fetch upstream && \git rebase upstream/new-master; \
 	cd ../nonfree-touchscreen-firmware-common && git fetch upstream && \git rebase upstream/master; \
