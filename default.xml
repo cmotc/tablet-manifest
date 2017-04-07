@@ -20,4 +20,8 @@
   <project path="openfwwf" name="openfwwf" />
   -->
   <project path="ath9k-firmware" name="open-ath9k-htc-firmware" />
+  <!--
+  <project path="tab-deb" name="tab-deb" />
+  <project path="tab-web" name="tab-web" />
+  -->
 </manifest>

@@ -8,9 +8,6 @@ COMMIT_MESSAGE += `date +'%y%m%d%H%M%S'`
 dummy:
 	echo "test"
 
-symlink:
-	./.fix_lua.sh
-
 clone:
 	\git clone git@github.com:$(GH_NAME)/tablet-manifest . || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/tablet-manifest .; \
 	\git clone git@github.com:$(GH_NAME)/u-boot || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/u-boot; \
@@ -39,10 +36,11 @@ init-upstream:
 
 checkout:
 	\git checkout master
-	cd u-boot && \git  checkout mobs
-	cd imgmaker && \git  checkout master
+	cd u-boot && \git  checkout master
+	cd imgmaker && \git  checkout new-master
 
 commit:
+	\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 	cd u-boot && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 	cd ../imgmaker && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 	echo "Committed Release:"
@@ -50,8 +48,8 @@ commit:
 
 fetch:
 	\git rebase upstream/master; \
-	cd u-boot && \git rebase upstream/mobs; \
-	cd ../imgmaker && \git rebase upstream/master; \
+	cd u-boot && \git rebase upstream/master; \
+	cd ../imgmaker && \git rebase upstream/new-master; \
 	echo "Pulled in updates"
 
 pull:
@@ -70,8 +68,9 @@ force-update:
 
 upload:
 	\git push github master; \
-	cd u-boot && \git push github mobs; \
-	cd ../lair-web && \git push github master;
+	cd u-boot && \git push github master; \
+	cd imgmaker && \git push github new-master; \
+	cd ../tab-web && \git push github master;
 	echo "Pushed Working Updates"
 
 clean:
@@ -80,36 +79,35 @@ clean:
 	cd .. && rm *.buildinfo *.changes *.deb *.deb.md *.dsc *.tar.xz *.tar.gz *.debian.tar.xz *.debian.tar.gz *.orig.tar.gz *.orig.tar.zz; \
 	echo "Finished cleaning"
 
-lair:
+uboot:
 	export VERSION=$(VERSION);cd u-boot && make deb-pkg || make deb-upkg
-	cd u-boot && make windows
 
-update-lair:
+update-uboot:
 	export VERSION=$(VERSION);cd u-boot &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
-		\git push github mobs
+		\git push github master
 
 web:
-	rm -rf lair-web/lair-deb
-	cp -R lair-deb lair-web/lair-deb
-	rm -rf lair-web/lair-deb/.git
+	rm -rf tab-web/tab-deb
+	cp -R tab-deb tab-web/tab-deb
+	rm -rf tab-web/tab-deb/.git
 
 reweb:
-	cd lair-web && make && git add . && git commit -am "new webpage ${COMMIT_MESSAGE}" ; git push github master
+	cd tab-web && make && git add . && git commit -am "new webpage ${COMMIT_MESSAGE}" ; git push github master
 
 update-web:
-	export VERSION=$(VERSION);cd lair-web && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+	export VERSION=$(VERSION);cd tab-web && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 		\git push github master
 
 sign:
 	export KEY=$(KEY); export GH_NAME=$(GH_NAME); ./.do_sign.sh
 
 deb:
-	rm lair-deb/packages/*
+	rm tab-deb/packages/*
 	cp lair_$(VERSION)-1_amd64.buildinfo \
-		lair-deb/packages; \
+		tab-deb/packages; \
 	cp lairart_$(VERSION)-1_amd64.buildinfo \
-		lair-deb/packages; \
-	cd lair-deb && ./apt-now
+		tab-deb/packages; \
+	cd tab-deb && ./apt-now
 
 full:
 	gpg --batch --yes --clear-sign -u $(KEY) README.md
