@@ -19,5 +19,5 @@
   <!--
   <project path="openfwwf" name="openfwwf" />
   -->
-  <project path="open-ath9k-htc-firmware" name="ath9k-firmware" />
+  <project path="ath9k-firmware" name="open-ath9k-htc-firmware" />
 </manifest>
