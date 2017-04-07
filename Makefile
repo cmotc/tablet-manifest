@@ -27,9 +27,9 @@ init:
 	\git remote add github git@github.com:$(GH_NAME)/tablet-manifest
 	cd u-boot && \git remote add github git@github.com:$(GH_NAME)/u-boot
 	cd imgmaker && \git  remote add github git@github.com:$(GH_NAME)/imgmaker
-	cd nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:$(GH_NAME)/nonfree-touchscreen-firmware-common
-	cd ath6kl-firmware && \git  remote add upstream git@github.com:$(GH_NAME)/ath6kl-firmware
-	cd ath9k-firmware && \git  remote add upstream git@github.com:$(GH_NAME)/ath9k-firmware
+	cd nonfree-touchscreen-firmware-common && \git  remote add github git@github.com:$(GH_NAME)/nonfree-touchscreen-firmware-common
+	cd ath6kl-firmware && \git  remote add github git@github.com:$(GH_NAME)/ath6kl-firmware
+	cd ath9k-firmware && \git  remote add github git@github.com:$(GH_NAME)/ath9k-firmware
 	echo "Initialized Working Remotes"
 	make checkout
 
