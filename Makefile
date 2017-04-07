@@ -108,14 +108,15 @@ clean:
 	echo "Finished cleaning"
 
 uboot:
-	export VERSION=$(VERSION);cd u-boot && make deb-pkg || make deb-upkg
+	export VERSION=$(VERSION);cd u-boot && export ARCH=arm64 && export CROSS_COMPILE=aarch64-linux-gnu- && make pine64_plus_defconfig && make
+	export VERSION=$(VERSION);cd u-boot && export ARCH=armhf && export CROSS_COMPILE=armhf-linux-gnu- && make antm_revo_a33_tablet_1024x600_defconfig && make
 
 update-uboot:
 	export VERSION=$(VERSION);cd u-boot &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 		\git push github master
 
 imgmaker:
-	export VERSION=$(VERSION);cd imgmaker && make deb-pkg || make deb-upkg
+	export VERSION=$(VERSION);cd imgmaker && make deb-pkg
 
 update-imgmaker:
 	export VERSION=$(VERSION);cd imgmaker &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
