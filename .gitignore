@@ -1,3 +1,16 @@
+.repo
 */
 */*
 */.git
+*.img
+*.buildinfo
+*.changes
+*.deb
+*.deb.md
+*.dsc
+*.tar.xz
+*.tar.gz
+*.debian.tar.xz
+*.debian.tar.gz
+*.orig.tar.gz
+*.orig.tar.zz
