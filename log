@@ -1,0 +1,91 @@
+ dpkg-buildpackage -rfakeroot -us -uc
+dpkg-buildpackage: info: source package nonfree-touchscreen-firmware-common
+dpkg-buildpackage: info: source version 20170407-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by lair repo key <problemsolver@openmailbox.org>
+ dpkg-source --before-build nonfree-touchscreen-firmware-common-20170407
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b nonfree-touchscreen-firmware-common-20170407
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building nonfree-touchscreen-firmware-common using existing ./nonfree-touchscreen-firmware-common_20170407.orig.tar.xz
+dpkg-source: warning: ignoring deletion of file debian.sh, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file README.md, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file Makefile, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory fw
+dpkg-source: warning: ignoring deletion of directory fw/gslx680
+dpkg-source: warning: ignoring deletion of file fw/gslx680/gsl_load_fwx680.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/gslx680_fw_grp.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/fwname.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/GSL1680E_700_FW.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/fw_index.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/GSL2681_D786_FW.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/GSL1680_K70_FW.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/GSL1688_A70_FW.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/GSL1680E_702G_FW.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680/GSL1680E_Q11_FW.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory fw/gslx680new
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_10V.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_D86.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_D88.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/gslx680_fw_grp.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_98V.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/fwname.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/gsl_load_fw.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_D87.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_D102.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_71Q2.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/fw_index.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSLX680_FW_INETD71.fw, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file fw/gslx680new/GSL1680E_FW_P2.fw, use --include-removal to override
+dpkg-source: warning: newly created empty file 'nonfree-touchscreen-firmware-common/README.md' will not be represented in diff
+dpkg-source: warning: executable mode 0755 of 'nonfree-touchscreen-firmware-common/debian.sh' will not be represented in diff
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680E_700_FW.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680E_700_FW.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680E_702G_FW.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680E_702G_FW.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680E_Q11_FW.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680E_Q11_FW.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680_K70_FW.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/GSL1680_K70_FW.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/GSL1688_A70_FW.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/GSL1688_A70_FW.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/GSL2681_D786_FW.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/GSL2681_D786_FW.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: warning: file nonfree-touchscreen-firmware-common-20170407/nonfree-touchscreen-firmware-common/fw/gslx680/fw_index.fw has no final newline (either original or modified version)
+dpkg-source: warning: file nonfree-touchscreen-firmware-common-20170407/nonfree-touchscreen-firmware-common/fw/gslx680/fwname.fw has no final newline (either original or modified version)
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/gsl_load_fwx680.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/gsl_load_fwx680.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680/gslx680_fw_grp.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680/gslx680_fw_grp.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSL1680E_FW_P2.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSL1680E_FW_P2.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_10V.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_10V.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_71Q2.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_71Q2.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_98V.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_98V.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D102.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D102.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D86.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D86.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D87.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D87.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D88.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_D88.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_INETD71.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/GSLX680_FW_INETD71.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: warning: file nonfree-touchscreen-firmware-common-20170407/nonfree-touchscreen-firmware-common/fw/gslx680new/fw_index.fw has no final newline (either original or modified version)
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/fwname.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/fwname.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/gsl_load_fw.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/gsl_load_fw.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to nonfree-touchscreen-firmware-common/fw/gslx680new/gslx680_fw_grp.fw: binary file contents changed
+dpkg-source: error: add nonfree-touchscreen-firmware-common/fw/gslx680new/gslx680_fw_grp.fw in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: unrepresentable changes to source
+dpkg-buildpackage: error: dpkg-source -b nonfree-touchscreen-firmware-common-20170407 gave error exit status 2
