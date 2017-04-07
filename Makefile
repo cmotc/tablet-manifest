@@ -113,6 +113,34 @@ update-uboot:
 	export VERSION=$(VERSION);cd u-boot &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 		\git push github master
 
+imgmaker:
+	export VERSION=$(VERSION);cd imgmaker && make deb-pkg || make deb-upkg
+
+update-imgmaker:
+	export VERSION=$(VERSION);cd imgmaker &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+		\git push github master
+
+ath6k:
+	export VERSION=$(VERSION);cd ath6kl-firmware && make deb-pkg || make deb-upkg
+
+update-ath6k:
+	export VERSION=$(VERSION);cd ath6kl-firmware &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+		\git push github master
+
+ath9k:
+	export VERSION=$(VERSION);cd ath9k-firmware && make deb-pkg || make deb-upkg
+
+update-ath9k:
+	export VERSION=$(VERSION);cd ath9k-firmware &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+		\git push github master
+
+touchscreen:
+	export VERSION=$(VERSION);cd nonfree-touchscreen-firmware-common && make deb-pkg || make deb-upkg
+
+update-touchscreen:
+	export VERSION=$(VERSION);cd nonfree-touchscreen-firmware-common &&\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+		\git push github master
+
 web:
 	rm -rf tab-web/tab-deb
 	cp -R tab-deb tab-web/tab-deb
