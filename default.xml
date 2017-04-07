@@ -5,15 +5,19 @@
   <default remote="origin"
            pushurl="git@github.com:cmotc/"
            revision="master" />
-  <project path="." name="lair-manifest" />
+  <project path="." name="tablet-manifest" />
   <project path="u-boot" name="u-boot" />
-  <project path="linux-debian-49" name="linux-debian-49" />
-  <project path="linux-grsec-49" name="linux-grsec-49" />
-  <project path="linux-libre-49" name="linux-libre-49"/>
-  <project path="linux-libre-grsec-49" name="linux-libre-grsec-49" />
+  <!--
+  <project path="linux-debian" name="linux-debian" />
+  <project path="linux-grsec" name="linux-grsec" />
+  <project path="linux-libre" name="linux-libre"/>
+  <project path="linux-libre-grsec" name="linux-libre-grsec" />
+  -->
   <project path="imgmaker" name="imgmaker" />
   <project path="nonfree-touchscreen-firmware-common" name="nonfree-touchscreen-firmware-common" />
   <project path="ath6kl-firmware" name="ath6kl-firmware" />
+  <!--
   <project path="openfwwf" name="openfwwf" />
+  -->
   <project path="open-ath9k-htc-firmware" name="ath9k-firmware" />
 </manifest>
