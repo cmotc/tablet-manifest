@@ -9,10 +9,10 @@ dummy:
 	echo "test"
 
 clone:
-	\git clone git@github.com:$(GH_NAME)/tablet-manifest . || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/tablet-manifest .; \
+	\git clone git@github.com:$(GH_NAME)/tablet-manifest . || \git clone https://github.com/$(GH_NAME)/tablet-manifest || git clone https://github.com/cmotc/tablet-manifest .; \
 	\git clone git@github.com:$(GH_NAME)/u-boot || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/u-boot; \
 	\git clone git@github.com:$(GH_NAME)/imgmaker || \git clone https://github.com/$(GH_NAME)/imgmaker || git clone https://github.com/cmotc/imgmaker; \
-	\git clone git@github.com:$(GH_NAME)/ath6kl-firmware || \git clone https://github.com/$(GH_NAME)/imgmaker || git clone https://github.com/cmotc/ath6kl-firmware; \
+	\git clone git@github.com:$(GH_NAME)/ath6kl-firmware || \git clone https://github.com/$(GH_NAME)/ath6kl-firmware || git clone https://github.com/cmotc/ath6kl-firmware; \
 	\git clone git@github.com:$(GH_NAME)/open-ath9k-htc-firmware || \git clone https://github.com/$(GH_NAME)/open-ath9k-htc-firmware || git clone https://github.com/cmotc/open-ath9k-htc-firmware; \
 	echo "Cloned subprojects"
 
