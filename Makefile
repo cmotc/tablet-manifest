@@ -65,12 +65,12 @@ commit:
 	echo "${COMMIT_MESSAGE}"
 
 fetch:
-	\git rebase upstream/master; \
-	cd u-boot && \git rebase upstream/master; \
-	cd ../imgmaker && \git rebase upstream/new-master; \
-	cd ../nonfree-touchscreen-firmware-common && \git rebase upstream/master; \
-	cd ../ath6kl-firmware && \git rebase upstream/master; \
-	cd ../ath9k-firmware && \git rebase upstream/master; \
+	git fetch upstream &&\git rebase upstream/master; \
+	cd u-boot && git fetch upstream && \git rebase upstream/master; \
+	cd ../imgmaker && git fetch upstream && \git rebase upstream/new-master; \
+	cd ../nonfree-touchscreen-firmware-common && git fetch upstream && \git rebase upstream/master; \
+	cd ../ath6kl-firmware && git fetch upstream && \git rebase upstream/master; \
+	cd ../ath9k-firmware && git fetch upstream && \git rebase upstream/master; \
 	echo "Pulled in updates"
 
 pull:
