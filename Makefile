@@ -12,6 +12,8 @@ clone:
 	\git clone git@github.com:$(GH_NAME)/tablet-manifest . || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/tablet-manifest .; \
 	\git clone git@github.com:$(GH_NAME)/u-boot || \git clone https://github.com/$(GH_NAME)/u-boot || git clone https://github.com/cmotc/u-boot; \
 	\git clone git@github.com:$(GH_NAME)/imgmaker || \git clone https://github.com/$(GH_NAME)/imgmaker || git clone https://github.com/cmotc/imgmaker; \
+	\git clone git@github.com:$(GH_NAME)/ath6kl-firmware || \git clone https://github.com/$(GH_NAME)/imgmaker || git clone https://github.com/cmotc/ath6kl-firmware; \
+	\git clone git@github.com:$(GH_NAME)/ath9k-firmware || \git clone https://github.com/$(GH_NAME)/ath9k-firmware || git clone https://github.com/cmotc/ath9k-firmware; \
 	echo "Cloned subprojects"
 
 deinit:
@@ -25,24 +27,37 @@ init:
 	\git remote add github git@github.com:$(GH_NAME)/tablet-manifest
 	cd u-boot && \git remote add github git@github.com:$(GH_NAME)/u-boot
 	cd imgmaker && \git  remote add github git@github.com:$(GH_NAME)/imgmaker
+	cd nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:$(GH_NAME)/nonfree-touchscreen-firmware-common
+	cd ath6kl-firmware && \git  remote add upstream git@github.com:$(GH_NAME)/ath6kl-firmware
+	cd ath9k-firmware && \git  remote add upstream git@github.com:$(GH_NAME)/ath9k-firmware
 	echo "Initialized Working Remotes"
 	make checkout
 
 init-upstream:
-	\git remote add upstream git@github.com:cmotc/tablet-manifest; \
+	\git remote add upstream git@github.com:cmotc/tablet-manifest
 	cd u-boot && \git remote add upstream git@github.com:cmotc/u-boot
 	cd imgmaker && \git  remote add upstream git@github.com:cmotc/imgmaker
+	cd nonfree-touchscreen-firmware-common && \git  remote add upstream git@github.com:cmotc/nonfree-touchscreen-firmware-common
+	cd ath6kl-firmware && \git  remote add upstream git@github.com:cmotc/ath6kl-firmware
+	cd ath9k-firmware && \git  remote add upstream git@github.com:cmotc/ath9k-firmware
 	echo "Initialized Upstream Remotes"
 
 checkout:
 	\git checkout master
 	cd u-boot && \git  checkout master
 	cd imgmaker && \git  checkout new-master
+	cd nonfree-touchscreen-firmware-common && \git checkout master
+	cd ath6kl-firmware && \git checkout master
+	cd ath9k-firmware && \git  checkout master
+	echo "Checked out defaults"
 
 commit:
 	\git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 	cd u-boot && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 	cd ../imgmaker && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+	cd ../nonfree-touchscreen-firmware-common && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+	cd ../ath6kl-firmware && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
+	cd ../ath9k-firmware && \git add . && \git commit -am "${COMMIT_MESSAGE}"; \
 	echo "Committed Release:"
 	echo "${COMMIT_MESSAGE}"
 
@@ -50,6 +65,9 @@ fetch:
 	\git rebase upstream/master; \
 	cd u-boot && \git rebase upstream/master; \
 	cd ../imgmaker && \git rebase upstream/new-master; \
+	cd ../nonfree-touchscreen-firmware-common && \git rebase upstream/master; \
+	cd ../ath6kl-firmware && \git rebase upstream/master; \
+	cd ../ath9k-firmware && \git rebase upstream/master; \
 	echo "Pulled in updates"
 
 pull:
@@ -69,13 +87,19 @@ force-update:
 upload:
 	\git push github master; \
 	cd u-boot && \git push github master; \
-	cd imgmaker && \git push github new-master; \
-	cd ../tab-web && \git push github master;
+	cd ../imgmaker && \git push github new-master; \
+	cd ../nonfree-touchscreen-firmware-common && \git push github master; \
+	cd ../ath6kl-firmware && \git push github master; \
+	cd ../ath9k-firmware && \git push github master; \
+	#cd ../tab-web && \git push github master;
 	echo "Pushed Working Updates"
 
 clean:
 	cd u-boot && make clean; \
 	cd ../imgmaker && make clean; \
+	cd ../nonfree-touchscreen-firmware-common && make clean; \
+	cd ../ath6kl-firmware && make clean; \
+	cd ../ath9k-firmware && make clean; \
 	cd .. && rm *.buildinfo *.changes *.deb *.deb.md *.dsc *.tar.xz *.tar.gz *.debian.tar.xz *.debian.tar.gz *.orig.tar.gz *.orig.tar.zz; \
 	echo "Finished cleaning"
 
@@ -134,7 +158,4 @@ release:
 	make reweb
 	make push
 	repo sync
-
-#Don't use this yet, it's teaching me about what needs to exist to make the code
-#run modules and plugins from configrable locations right now.
 
